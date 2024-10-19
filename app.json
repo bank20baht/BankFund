@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./src/main.ts",
     "name": "bankfund",
     "slug": "bankfund",
     "version": "1.0.0",
