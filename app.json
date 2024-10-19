@@ -1,7 +1,6 @@
 {
   "expo": {
-    "entryPoint": "./src/main.ts",
-    "name": "bankfund",
+    "name": "BankFund",
     "slug": "bankfund",
     "version": "1.0.0",
     "orientation": "portrait",
