@@ -23,6 +23,9 @@ importers:
       react-native:
         specifier: 0.74.5
         version: 0.74.5(@babel/core@7.25.8)(@babel/preset-env@7.25.8(@babel/core@7.25.8))(@types/react@18.2.79)(react@18.2.0)
+      react-native-reanimated:
+        specifier: ~3.10.1
+        version: 3.10.1(@babel/core@7.25.8)(react-native@0.74.5(@babel/core@7.25.8)(@babel/preset-env@7.25.8(@babel/core@7.25.8))(@types/react@18.2.79)(react@18.2.0))(react@18.2.0)
       zustand:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@18.2.79)(react@18.2.0)(use-sync-external-store@1.2.2(react@18.2.0))
@@ -40,8 +43,8 @@ importers:
         specifier: ~18.2.45
         version: 18.2.79
       husky:
-        specifier: ^9.1.6
-        version: 9.1.6
+        specifier: ^8.0.0
+        version: 8.0.3
       tailwindcss:
         specifier: 3.3.2
         version: 3.3.2
@@ -2271,9 +2274,9 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  husky@9.1.6:
-    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
-    engines: {node: '>=18'}
+  husky@8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
     hasBin: true
 
   ieee754@1.2.1:
@@ -3395,6 +3398,13 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-native-reanimated@3.10.1:
+    resolution: {integrity: sha512-sfxg6vYphrDc/g4jf/7iJ7NRi+26z2+BszPmvmk0Vnrz6FL7HYljJqTf531F1x6tFmsf+FEAmuCtTUIXFLVo9w==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+      react: '*'
+      react-native: '*'
 
   react-native@0.74.5:
     resolution: {integrity: sha512-Bgg2WvxaGODukJMTZFTZBNMKVaROHLwSb8VAGEdrlvKwfb1hHg/3aXTUICYk7dwgAnb+INbGMwnF8yeAgIUmqw==}
@@ -7285,7 +7295,7 @@ snapshots:
 
   human-signals@2.1.0: {}
 
-  husky@9.1.6: {}
+  husky@8.0.3: {}
 
   ieee754@1.2.1: {}
 
@@ -8448,6 +8458,22 @@ snapshots:
   react-is@17.0.2: {}
 
   react-is@18.3.1: {}
+
+  react-native-reanimated@3.10.1(@babel/core@7.25.8)(react-native@0.74.5(@babel/core@7.25.8)(@babel/preset-env@7.25.8(@babel/core@7.25.8))(@types/react@18.2.79)(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@babel/core': 7.25.8
+      '@babel/plugin-transform-arrow-functions': 7.25.7(@babel/core@7.25.8)
+      '@babel/plugin-transform-nullish-coalescing-operator': 7.25.8(@babel/core@7.25.8)
+      '@babel/plugin-transform-optional-chaining': 7.25.8(@babel/core@7.25.8)
+      '@babel/plugin-transform-shorthand-properties': 7.25.7(@babel/core@7.25.8)
+      '@babel/plugin-transform-template-literals': 7.25.7(@babel/core@7.25.8)
+      '@babel/preset-typescript': 7.25.7(@babel/core@7.25.8)
+      convert-source-map: 2.0.0
+      invariant: 2.2.4
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.25.8)(@babel/preset-env@7.25.8(@babel/core@7.25.8))(@types/react@18.2.79)(react@18.2.0)
+    transitivePeerDependencies:
+      - supports-color
 
   react-native@0.74.5(@babel/core@7.25.8)(@babel/preset-env@7.25.8(@babel/core@7.25.8))(@types/react@18.2.79)(react@18.2.0):
     dependencies:
