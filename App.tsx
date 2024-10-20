@@ -7,19 +7,35 @@ import Animated, {
 import Header from "./src/components/Header";
 import useCountStore from "./src/store/store";
 import { styled } from "nativewind";
+import { useFonts } from "expo-font";
+import { useEffect } from "react";
+import * as SplashScreen from "expo-splash-screen";
 
 const AnimatedView = styled(Animated.View);
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const { count, increaseCount, decreaseCount } = useCountStore();
+  const [loaded, error] = useFonts({
+    Prompt: require("./assets/fonts/Prompt-Regular.ttf"),
+  });
 
   const width = useSharedValue(100);
-
   const animatedStyle = useAnimatedStyle(() => {
     return {
       width: width.value,
     };
   });
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
 
   const handlePress = () => {
     width.value = withSpring(width.value + 50);
@@ -33,8 +49,13 @@ export default function App() {
     <SafeAreaView className="flex-1">
       <Header />
       <View className="p-4">
-        <Text>Count: {count}</Text>
-        <Text className="text-lg">Hello</Text>
+        <Text style={{ fontFamily: "Prompt" }}>Count: {count}</Text>
+        <Text className="text-lg" style={{ fontFamily: "Prompt" }}>
+          Hello
+        </Text>
+        <Text className="text-lg" style={{ fontFamily: "Prompt" }}>
+          สวัสดี
+        </Text>
         <Button title="Increase" onPress={increaseCount} />
         <Button title="Decrease" onPress={decreaseCount} />
       </View>
@@ -45,7 +66,7 @@ export default function App() {
 
       <View className="flex-row justify-around mt-4">
         <Button onPress={handlePress} title="Expand" />
-        <Button onPress={handlePressDecrees} title="shrink" />
+        <Button onPress={handlePressDecrees} title="Shrink" />
       </View>
     </SafeAreaView>
   );
